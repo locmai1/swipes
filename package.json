@@ -6,9 +6,13 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "cd client && yarn run start",
+    "dev": "concurrently --kill-others \"yarn run server\" \"yarn run client\""
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "puppeteer": "^19.5.0"
